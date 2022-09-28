@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+// Service definition
+service ExampleService {
+    rpc GetUser (GetUserRequest) returns (User);
+
+    rpc CreateUser (CreateUserRequest) returns (User);
+}
+
+message CreateUserRequest{
+    string name = 1;
+    string display_name = 2;
+    string email = 3;
+}
+
+message CreateUserResponse{
+    string name = 1;
+    string display_name = 2;
+    string email = 3;
+}
+// Message types
+message User {
+    string name = 1;
+    string display_name = 2;
+    string email = 3;
+}
+message GetUserRequest {
+    string name = 1;
+    string display_name = 2;
+    string email = 3;
+}
